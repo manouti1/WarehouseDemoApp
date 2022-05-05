@@ -42,12 +42,11 @@ You will find the code inside the solution in a folder called ClientApp, the fol
  **Client**
 Open command line and run the following commands:
 
-1. 
 ```bash
  npm install
 ```
 Once done run the following:
-2.
+
 ```bash
  ng serve
 ```

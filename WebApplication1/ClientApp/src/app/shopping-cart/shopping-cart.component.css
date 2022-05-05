@@ -1,0 +1,6 @@
+.btn-remove-cart{
+    background-color: #dc3545;
+}
+.tbl-cart > thead, tbody, tfoot, tr, td, th{
+    padding: 5px;
+}

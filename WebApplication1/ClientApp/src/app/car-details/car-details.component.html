@@ -1,0 +1,48 @@
+<div class="container">
+  <h2>Car Details</h2>
+  <div class="row">
+    <div class="col-md-8 offset-md-4" *ngIf="carDetails==null">
+        <div class="spinner-border" *ngIf="!isError">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+ </div>
+  <div class="list-group" *ngIf="carDetails!=null">
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Make</b>
+      <p class="list-group-item-text">{{carDetails?.make}}</p>
+    </div>
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Model</b>
+      <p class="list-group-item-text">{{carDetails?.model}}</p>
+    </div>
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Year Model</b>
+      <p class="list-group-item-text">{{carDetails?.yearModel}}</p>
+    </div>
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Location</b>
+      <p class="list-group-item-text">{{carDetails?.location}}</p>
+    </div>
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Latitude</b>
+      <p class="list-group-item-text">{{carDetails?.lat}}</p>
+    </div>
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Longitude</b>
+      <p class="list-group-item-text">{{carDetails?.lng}}</p>
+    </div>
+    <div class="list-group-item">
+      <b class="list-group-item-heading">Warehouse Name</b>
+      <p class="list-group-item-text">{{carDetails?.warehouseName}}</p>
+    </div>
+    <div class="row mt-2">
+      <div class="col-sm-12">
+        <a [routerLink]="['/cars']" class="btn btn-primary">
+         Back
+        </a>
+      </div>
+    </div>
+  </div>
+ 
+</div>

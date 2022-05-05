@@ -1,0 +1,57 @@
+<div class="m-3">
+  <h2>Cars</h2>
+  <div class="row">
+    <div class="col-md-8 offset-md-4" *ngIf="cars.length==0">
+        <div class="spinner-border" *ngIf="!isError">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+ </div>
+  <div *ngIf="cars.length > 0">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" sortable="name">Make</th>
+          <th scope="col" sortable="area">Model</th>
+          <th scope="col" sortable="population">Year Model</th>
+          <th scope="col" sortable="licensed">Licensed</th>
+          <th scope="col" sortable="price">Price</th>
+          <th scope="col" sortable="dateAdded">Date Added</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars; index as i">
+          <th scope="row">{{ (page -1) * pageSize + i + 1 }}</th>
+          <td>{{ car.make }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.yearModel }}</td>
+          <td>{{ car.licensed }}</td>
+          <td>{{ car.price }}</td>
+          <td>{{ car.dateAdded | date }}</td>
+          <td>
+            <button type="button" (click)="goToDetails(car.vehicleId)" class="btn btn-primary">Get Details</button>
+          </td>
+          <td>
+            <a [routerLink]="['/cart']" [state]="car" class="btn btn-success">Add To Cart</a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+            <td colspan="9">
+              <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="loadPage($event)"
+              [pageSize]="pageSize" class="d-flex justify-content-center"></ngb-pagination>
+            </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="row mt-3" *ngIf="cars.length==0 && isError">
+      <div class="col-sm-12">
+          <b>No Data available</b>
+      </div>
+  </div>
+</div>

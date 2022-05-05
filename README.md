@@ -37,9 +37,11 @@ You will find the code inside the solution in a folder called ClientApp, the fol
 ## How to run
 
 **Server**
+
  From visual studio you only need to run the application.
 
  **Client**
+ 
 Open command line and run the following commands:
 
 ```bash
